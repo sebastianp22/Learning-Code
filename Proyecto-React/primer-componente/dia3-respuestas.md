@@ -38,3 +38,36 @@ R:en normal count siempre vuelve a iniciar desde 1, en cambio en useState siempr
 
 R: Creo que en una variable normal no usa ningún tipo de memoria y que en useState se utiliza una memoria que va guardando el estado, por lo que se va renderizando de otra manera.
 
+## BLOQUE 2: Comportamiento Asíncrono
+
+### Experimento 1
+¿Qué muestra ANTES en el primer clic?
+R: Muestra 0
+
+¿Qué muestra DESPUÉS en el primer clic?
+R: muestra 0
+
+¿Son iguales o diferentes? ¿Por qué crees que pasa esto?
+R: por el comportamiento de ambos, parecieran ser similares
+
+### Experimento 2
+¿Cuánto incrementa cada clic en "+3"?
+R: aumenta 1 por cada click
+¿Qué muestra el console.log?
+R: muestra 3 "despues de llamar 3 veces" y en valores va de 0 a 1 a 2
+
+¿Por qué crees que no suma 3?
+R: 
+
+
+### Experimento 3 - Función actualizadora
+¿Cuánto suma "+3 (correcto)" por cada clic?
+R: suma 3, va así 3-6-9-etc...
+
+¿Cuál es la diferencia entre setStateCount(stateCount + 1) 
+y setStateCount(prev => prev + 1)?
+R: que en el primer stateCount +1 siempre dará como resultado 1, en cambio con prev => prev + 1 va a ir siempre sumando el número que le antecedía.
+
+¿Cuándo usarías cada uno?
+
+R: Usaria stateCount + 1 cuando necesite que siempre sea el valor 1 y usaría prev => prev + 1 siempre va sumar el anterior resultado + 3, ese sería el resultado esperable.
