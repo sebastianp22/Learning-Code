@@ -1,0 +1,16 @@
+const product = [product, setProduct] = useState ({
+name: '',
+price: 0,
+stock: 10
+)};
+
+const updatePrice = (newPrice) => {
+	setProduct({
+	...product,
+	price: newPrice
+	});
+};
+
+
+
+
