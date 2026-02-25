@@ -83,3 +83,34 @@ Input 2: [BBB]
 
 ¿Es lo que esperabas? ¿Qué esperabas que quedara?
 R: no es lo que esperaba, según yo, debiera quedar AAA y CCC. por lo que aquí debe estar el bug importante que hay que corregir
+
+
+
+
+
+## BLOQUE 2: Objetos complejos + interacción
+
+### ¿Qué hace tasks.map(task => task.id === taskId ? {...task, completed: !task.completed} : task)?
+R: recorre el array completo y pregunta si la tarea es igual a algo se ejecuta una acción y si es diferente, se ejecuta otra acción
+
+Explica paso a paso qué hace el operador ternario aquí.
+
+
+### ¿Por qué usamos checked={task.completed} en lugar de defaultChecked?
+R: R: porque tiene que revisar si es que la tarea está en estado chekeado o no.
+
+
+### ¿Qué significa task.completed ? 'line-through' : 'none'?
+R: Significa que al presionar click en la casilla o muestra un visto bueno o no muestra nada.
+
+
+### ¿Por qué el input de agregar tarea usa value={newTaskText} y no defaultValue?
+R: Porque no va un valor por defecto, uno mismo tiene que escribir el input.
+
+
+### ¿Qué hace newTaskText.trim()?
+R: Eliminar los espacios en blanco de las respuestas
+
+
+### ¿Por qué hacemos setNewTaskText('') después de agregar?
+R: Porque necesita ingresar una nueva tarea despues de ingresar la última.
