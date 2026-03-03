@@ -1,4 +1,7 @@
 import { useState } from "react";
+import TaskItem from "./TaskItem";
+import TaskForm from "./TaskForm"; 
+import TaskFilter from "./TaskFilter";
 
 function TaskList() {
   const [tasks, setTasks] = useState([
@@ -7,57 +10,73 @@ function TaskList() {
     { id: 3, text: "Leer documentación", completed: true },
   ]);
 
-  const [newTaskText, setNewTaskText] = useState("");
+  const [filter, setFilter] = useState("all"); // "all", "active", "completed"
 
   const toggleTask = (taskId) => {
-    setTasks((tasks.map(task =>
+    setTasks(tasks.map(task =>
       task.id === taskId 
       ? { ...task, completed: !task.completed } 
       : task
-    )));
+    ));
   };
 
-  const addTask = () => {
-    if (newTaskText.trim() !== "") {
-      const newId = Math.max(...tasks.map(t => t.id)) + 1; // Generar un nuevo ID único
-      setTasks([...tasks, { id: newId, text: newTaskText, completed: false }]);
-      setNewTaskText("");
+  const addTask = (text) => {
+      const newId = Math.max(...tasks.map(t => t.id), 0) + 1; // Generar un nuevo ID único
+      setTasks([...tasks, { id: newId, text: text, completed: false }]);
+  };
+
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter(t => t.id !== taskId));
+  };
+
+  const getFilteredTasks = () => {
+    if (filter === "completed") {
+      return tasks.filter(t => t.completed === true);
+    } 
+    if (filter === "pending") {
+      return tasks.filter(t => !t.completed === false);
     }
+    return tasks; // "all"
+  };
+
+    const filteredTasks = getFilteredTasks();
+
+  const counts = {
+    all: tasks.length,
+    pending: tasks.filter(t => !t.completed).length,
+    completed: tasks.filter(t => t.completed).length
   };
 
   return (
     <div style={{ padding: "20px", border: "2px solid purple" }}>
       <h2>Lista de Tareas</h2>
 
-      <div style={{ marginBottom: "20px" }}>
-      <input
-        type="text"
-        value={newTaskText}
-        onChange={(e) => setNewTaskText(e.target.value)}
-        placeholder="Nueva tarea..."
-        style={{ marginRight: "10px" }}
-      />
-      <button onClick={addTask}>Agregar Tarea</button>
-      </div>
+      <TaskForm onAdd={addTask} />
+
+        <TaskFilter 
+        currentFilter={filter} 
+        onFilterChange={setFilter} 
+        counts={counts} 
+        />
 
       <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTask(task.id)}
+        {filteredTasks.map((task) => (
+          <TaskItem 
+          key={task.id}
+          task={task}
+          onToggle={toggleTask} 
+          onDelete={deleteTask}
             />
-            <span style={{ 
-              marginLeft: "10px",
-              textDecoration: task.completed ? "line-through" : "none" }}>
-                {task.text}
-            </span>
-          </li>
         ))}
       </ul>
+
+      {filteredTasks.length === 0 && (
+        <p style={{ fontStyle: "italic", color: "gray" }}>
+          No hay tareas para mostrar.
+        </p>
+      )}
     </div>
   );
-}
+} 
 
 export default TaskList;

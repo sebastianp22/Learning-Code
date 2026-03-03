@@ -114,3 +114,24 @@ R: Eliminar los espacios en blanco de las respuestas
 
 ### ¿Por qué hacemos setNewTaskText('') después de agregar?
 R: Porque necesita ingresar una nueva tarea despues de ingresar la última.
+
+## BLOQUE 3: Filtros + CRUD completo
+
+### ¿Qué hace getFilteredTasks()?
+R: Va recorriendo el array seleccionando que tarea está completada y cual está pendiente. luego crea un nuevo array y devuelve el resultado
+
+### ¿Por qué usamos filteredTasks.map() en lugar de tasks.map()?
+R: porque tiene que recorrer las tareas ya filtradas, no todas las tasks
+
+
+### ¿Qué significa el operador && en {filteredTasks.length === 0 && <p>...</p>}?
+R: Tiene que verificar si el array tiene elementos con 0 o tiene completadas, pendientes u totales
+
+
+### ¿Qué patrón CRUD completamos?
+C = Create (agregar)
+R = Read (mostrar)
+U = Update (toggle completed)
+D = Delete (eliminar)
+
+Delete
