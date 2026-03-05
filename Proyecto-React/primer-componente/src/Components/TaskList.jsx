@@ -2,6 +2,9 @@ import { useState } from "react";
 import TaskItem from "./TaskItem";
 import TaskForm from "./TaskForm"; 
 import TaskFilter from "./TaskFilter";
+import TaskStats from "./TaskStats";
+import ThemeToggle from "./ThemeToggle";
+
 
 function TaskList() {
   const [tasks, setTasks] = useState([
@@ -11,6 +14,11 @@ function TaskList() {
   ]);
 
   const [filter, setFilter] = useState("all"); // "all", "active", "completed"
+  const [theme, setTheme] = useState("light"); // "light" o "dark"
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const toggleTask = (taskId) => {
     setTasks(tasks.map(task =>
@@ -34,7 +42,7 @@ function TaskList() {
       return tasks.filter(t => t.completed === true);
     } 
     if (filter === "pending") {
-      return tasks.filter(t => !t.completed === false);
+      return tasks.filter(t => t.completed === false);
     }
     return tasks; // "all"
   };
@@ -47,9 +55,21 @@ function TaskList() {
     completed: tasks.filter(t => t.completed).length
   };
 
+  const bgColor = theme === "light" ? "#fff" : "#2c2c2c";
+  const textColor = theme === "light" ? "#000" : "#fff";
+
   return (
-    <div style={{ padding: "20px", border: "2px solid purple" }}>
+    <div style={{ 
+      padding: "20px", 
+      border: "2px solid purple",
+      backgroundColor: bgColor,
+      color: textColor,
+      minHeight: "100vh",}}>
       <h2>Lista de Tareas</h2>
+
+      <ThemeToggle theme={theme} onToggle={toggleTheme} />
+
+      <TaskStats tasks={tasks} theme={theme} /> 
 
       <TaskForm onAdd={addTask} />
 

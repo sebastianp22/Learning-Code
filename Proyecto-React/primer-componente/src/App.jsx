@@ -1,8 +1,6 @@
 //import StateBasics from "./Components/StateBasics";
 //import { FormWithState, UserProfile } from "./Components/FormWithState";
-import ListsBasics from "./Components/ListsBasics"; 
 import TaskList from "./Components/TaskList";
-import TaskForm from "./Components/TaskForm"; 
 
 
 
@@ -10,7 +8,6 @@ import TaskForm from "./Components/TaskForm";
 function App() {
   return (
     <div>
-       <ListsBasics />
         <TaskList />
     </div>
   );

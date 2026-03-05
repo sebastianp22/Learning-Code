@@ -18,7 +18,7 @@ function TaskForm({ onAdd }) {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Nueva tarea..."
-        Style={{ marginRight: "10px" }}
+        style={{ marginRight: "10px" }}
       />
       <button type="submit">Agregar</button>
     </form>
