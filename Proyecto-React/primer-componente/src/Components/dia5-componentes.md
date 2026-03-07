@@ -119,3 +119,119 @@ R: tiene que hacerlo a través de una función que llame al padre
 
 
 ### 4. ¿Qué significa "single source of truth" (única fuente de verdad)?R: significa que es un elemento inmutable, como por ejemplo los datos de un props, contiene el valor que le otorga el padre por lo que no lo puede modificar si no tiene autorización del padre.
+
+
+
+### COMPONENTES Y JSX
+
+1. ¿Qué es un componente en React?
+R: es una pieza, un elemento independiente y reutilizable.
+
+
+2. ¿Cuál es la diferencia entre un componente y HTML estático?
+R: que un componente es mutable, en cambio HTML estático es fijo
+
+
+---
+
+### ESTADO (useState)
+
+3. ¿Qué retorna useState(0)?
+R: retorna [0, function]
+
+4. ¿Por qué este código NO funciona?
+const [count, setCount] = useState(0);
+count = 5;
+
+R: porque está intentando modificar el useState y no se puede
+
+
+5. ¿Cuándo usarías setCount(count + 1) vs setCount(prev => prev + 1)?
+R: cuando en un caso necesite ir sumando de 1 en 1 y en otro caso cuando necesite ir aumentando 1 más.
+
+---
+
+### PROPS
+
+6. ¿Las props van de padre a hijo o de hijo a padre?
+R: de padre  a hijo siempre
+
+
+7. ¿El hijo puede modificar las props que recibe?
+R: puede llamando alguna function, pero no puede directamente, debe llamar la function, modificar y luego re-renderizar
+
+
+8. Si un hijo necesita cambiar algo del padre, ¿qué patrón usa?
+R: tendría que llamar una function especifica
+
+---
+
+### LISTAS Y KEYS
+
+9. ¿Para qué sirve la prop key en map()?
+R: para hacer único e independiente un valor
+
+
+10. ¿Cuál es el problema de usar key={index} al eliminar elementos?
+R: que no renderiza bien los cambios y sigue leyendo elementos de manera ordenada, lo que hace que no mantenga un id único e independiente de los valores.
+
+
+---
+
+### INPUTS CONTROLADOS
+
+11. ¿Qué hace que un input sea "controlado"?
+R: que el valor no lo maneja el dom interno si no que lo maneja el estado del componente
+
+
+12. ¿Cuál es la diferencia entre value y defaultValue?
+R: que un value puede ser cualquier valor que se otorgue y defaultvalue tecnicamente es un valor por defecto que se muestra
+
+---
+
+### ARRAYS Y OBJETOS EN ESTADO
+
+13. ¿Por qué NO hacemos tasks.push(newTask)?
+R: porque push modifica el array y eso viola es concepto de inmutabilidad del estado
+
+
+14. ¿Cómo actualizas solo una propiedad de un objeto sin perder las demás?
+R: habría que usar el operador spread (...) y ahí recién sobreescribir la propiedad que se dea modificar.
+
+
+---
+
+### LIFTING STATE UP
+
+15. Si dos hermanos necesitan el mismo dato, ¿dónde vive el estado?
+R: El estado vive en el padre. debe vivir en el ancestro común más cercano
+
+
+16. ¿Qué significa "single source of truth"?
+R: es la gestión de datos que centraliza la información en una sola ubicación o sistema de referencia.
+
+
+
+
+## PARTE 2: Mini-proyecto Contact Manager
+
+### ¿Qué conceptos del Día 1-6 usaste en este proyecto?
+Lista TODOS los que identifiques:
+R:
+- useState
+- TaskForm
+- TaskItem
+- FormWithState
+- TaskFilter
+
+
+### ¿Dónde vive el estado principal (contacts)?
+R: en ContactItem
+
+### ¿Por qué ContactForm no tiene el estado de contacts?
+R: porque ContactForm solo se enfoca en la validación de seguridad
+
+
+### ¿Qué patrón usamos en toggleFavorite?
+R: lifting state up
+
