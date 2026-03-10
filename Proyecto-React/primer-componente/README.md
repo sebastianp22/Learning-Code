@@ -23,10 +23,10 @@ Sistema completo de gestión de tareas con interfaz moderna.
 **Preview:**
 
 **Modo claro:**
-![Task Manager Light](screenshots/task-manager-light.png)
+![Task Manager Light](screenshots/task-list-light.png)
 
 **Modo oscuro:**
-![Task Manager Dark](screenshots/task-manager-dark.png)
+![Task Manager Dark](screenshots/task-list-dark.png)
 
 ### 2. 📇 Contact Manager
 Gestor de contactos profesional con validación de seguridad.
