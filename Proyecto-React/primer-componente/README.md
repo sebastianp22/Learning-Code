@@ -23,10 +23,10 @@ Sistema completo de gestión de tareas con interfaz moderna.
 **Preview:**
 
 **Modo claro:**
-![task manager - light mode](./screenshots/task-manager-light.png)
+![Task Manager Light](screenshots/task-manager-light.png)
 
 **Modo oscuro:**
-![task manager - dark mode](./screenshots/task-manager-dark.png)
+![Task Manager Dark](screenshots/task-manager-dark.png)
 
 ### 2. 📇 Contact Manager
 Gestor de contactos profesional con validación de seguridad.
@@ -42,7 +42,7 @@ Gestor de contactos profesional con validación de seguridad.
 Componentes reutilizables • CRUD completo • Inputs controlados • Validación de formularios • Inmutabilidad
 
 **Preview:**
-![contact manager](./screenshots/contact-manager.png)
+![Contact Manager](screenshots/contact-manager.png)
 
 ## 🛠️ Tecnologías
 
