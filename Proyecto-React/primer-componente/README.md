@@ -19,7 +19,8 @@ Sistema completo de gestión de tareas con interfaz moderna.
 **Conceptos aplicados:** 
 `useState` • `props` • `map()` • `filter()` • Lifting State Up • Renderizado condicional
 
----
+**Preview:**
+![Task List](./Screenshots/Task-List.png)
 
 ### 2. 📇 Contact Manager
 Gestor de contactos profesional con validación de seguridad.
@@ -34,7 +35,8 @@ Gestor de contactos profesional con validación de seguridad.
 **Conceptos aplicados:** 
 Componentes reutilizables • CRUD completo • Inputs controlados • Validación de formularios • Inmutabilidad
 
----
+**Preview:**
+![Contact Manager](./Screenshots/Contact-Manager.png)
 
 ## 🛠️ Tecnologías
 

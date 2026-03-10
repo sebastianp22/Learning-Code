@@ -40,10 +40,11 @@ function ContactForm({ onAdd }) {
 
   return (
     <form onSubmit={handleSubmit} style={{ 
-      marginBottom: "20px",
-      padding: "10px",
-      backgroundColor: "#f5f5f5",
-      borderRadius: "5px"
+      width: "80%",
+      marginBottom: "10px",
+      padding: "30px",
+      backgroundColor: "#0F064F",
+      borderRadius: "2px"
     }}>
       <h3>Agregar Contacto</h3>
 
@@ -54,10 +55,10 @@ function ContactForm({ onAdd }) {
         value={name}
         onChange={(e) => setName(e.target.value)}
       style={{
-        width: "100%",
-        padding: "8px",
+        width: "90%",
+        padding: "10px",
         fontSize: "14px",
-        borderRadius: "4px",
+        borderRadius: "2px",
         border: "1px solid #ddd"
       }} 
     />
@@ -70,10 +71,10 @@ function ContactForm({ onAdd }) {
     value={email}
     onChange={(e) => setEmail(e.target.value)}
     style={{
-      width: "100%",
+      width: "90%",
       padding: "10px",
       fontSize: "14px",
-      borderRadius: "4px",
+      borderRadius: "2px",
       border: "1px solid #ddd"
     }}
   />

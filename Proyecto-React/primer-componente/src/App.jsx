@@ -5,7 +5,11 @@ import ContactManager from "./Components/ContactManager";
 
 // Componente principal de la aplicación
 function App() {
-  return <ContactManager />;
+  return (
+    <div>
+    <ContactManager />
+    </div>
+  )
 }  
 
 export default App;
